@@ -52,7 +52,7 @@ function borrower(loan) {
     },
     makePayment: function() {
       if(account.funds > loan.getMonthlyPayment()) {
-        account.funds -= loan.getMonthlyPayment;
+        account.funds -= loan.getMonthlyPayment();
         loan.receivePayment(loan.getMonthlyPayment());
       }else{
         loan.receivePayment(account.funds);
@@ -74,4 +74,5 @@ while(stevesLoan.isForeclosed() === false){
   month++;
 }
 
+monthsUntilEvicted = month;
 
